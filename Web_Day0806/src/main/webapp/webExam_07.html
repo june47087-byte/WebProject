@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 등록 기능 만들어보기</title>
+<style>
+	table {
+		border: solid black; 
+		border-collapse:collapse; 
+		width:500px;
+	}
+	td {
+		border: 1px solid black; 
+		margin-left:1; 
+		padding:5px;
+	}
+	.btn_group{
+		text-align:center;
+	}
+</style>
+<script>
+	function send() {
+		if(frm.name.value==""){
+			alert("이름를 입력하세요");
+			document.frm.name.focus();
+			return;
+		}
+		if(frm.id.value==""){
+			alert("아이디를 입력하세요");
+			document.frm.id.focus();
+			return;
+		}
+		if(frm.pw.value==""){
+			alert("비밀번호를 입력하세요");
+			document.frm.pw.focus();
+			return;
+		}
+		if(frm.call1.value==""){
+			alert("전화번호를 입력하세요");
+			document.frm.call1.focus();
+			return;
+		}
+		if(frm.call2.value==""){
+			alert("전화번호를 입력하세요");
+			document.frm.call2.focus();
+			return;
+		}
+		if(frm.call3.value==""){
+			alert("전화번호를 입력하세요");
+			document.frm.call3.focus();
+			return;
+		}
+		if(frm.email1.value==""||frm.email2.value =="") {
+			alert("이메일를 입력하세요");
+			document.frm.email1.focus();
+			return;
+		}
+		alert("회원가입을 환영합니다.");
+/*		
+		유효성 검사(이걸 하기 위해서는 함수를 거쳐야한다.)
+		if(!frm.name.value){
+			alert("이름이 입력되지 않았습니다.");
+			frm.name.focus();
+		}
+		//숫자인지 문자인지 검사하는 메소드도 있다.
+*/
+		// 전송하는 메소드 명령어 (input 타입이 submit이면 바로 전송된다.) form name.submit();
+		frm.submit();
+	}
+	function dl() {
+		alert("등록된 정보를 모두 지우고 다시 입력합니다");
+		frm.reset();
+		document.frm.id.focus();
+	}
+</script>
+</head>
+<body>
+<form name="frm" id="" method="get" action="member_ok.jsp">
+	<table>
+		<tr>
+			<td colspan=2 align="center">회원가입 폼</td>
+		</tr>
+		<tr>
+			<td width="100">이름</td>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id" id="id"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="pw" id="pw"></td>
+		</tr>
+		<tr>
+			<td>연락처</td>
+			<td>
+				<input type="text" name="call1" id="call1" size="3">-
+				<input type="text" name="call2" id="call2" size="4">-
+				<input type="text" name="call3" id="call3" size="4">
+			</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td>
+				<input type="text" name="email1" id="email1">@
+				<input type="text" name="email2" id="email2">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class=btn_group>
+				<input type="button" name="agree" value="등록" onClick="send()">
+				<input type="button" name="cancel" value="취소" onClick="dl()">
+			</td>
+		</tr>
+</table>
+</form>
+</body>
+</html>
+

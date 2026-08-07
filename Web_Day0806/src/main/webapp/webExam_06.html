@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input 태그에 대해 알아보고 스크립트에 대해 알아보기</title>
+
+</head>
+<body>
+	<form name="frm" id="" method="post" action="aaa.jsp">
+		<table width=300 border=1>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id" id=""></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="pw" id=""></td>
+			</tr>
+				<tr>
+				<td colspan=2 >
+					<input type="submit" value="로그인">
+					<input type="reset" value="취소">
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 >
+				<!-- onClick 하면 자바스크립트 함수 호출 , onchainge라는 것도 있다. -->
+					<input type="button" value="로그인" onClick="send()">
+					<input type="button" value="취소" onClick="dl()">
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 >
+					<button onclick="send()">로그인</button>
+					<button onclick="dl()">취소</button> <!-- 인풋 버튼은 함수 실행후 멈추는데 버튼 태그는 함수 실행 후 동작한다  --> 
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+<!-- 함수는 아무데나 만들어도 되는데 다만 <script></script> 안에서 만들어야한다. 만드는 법은 아래에 참조  -->
+<script>
+	function send(a) {
+		a=10;
+		b="aaaa";
+		// 경고창 띄우기 alert("메세지") {}
+		if(document.frm.id.value=="") {
+			alert("아이디를 입력하세요");
+			document.frm.id.focus(); // focus();커서 이동 함수 이걸 안하면 내가 직접 id 입력창을 클릭해야한다.
+			return; // 함수 끝내기
+		}
+		if(document.frm.pw.value=="") {
+			alert("비밀번호를 입력하세요");
+			document.frm.pw.focus(); // focus();커서 이동 함수 이걸 안하면 내가 직접 pw 입력창을 클릭해야한다.
+			return; // 함수 끝내기
+		}
+		alert("로그인을 수행합니다");
+	}
+	function dl() {
+		alert("등록된 정보를 모두 지우고 다시 입력합니다");
+		frm.reset();
+		doucment.frm.id.focus();
+	}
+</script>

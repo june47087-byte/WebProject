@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 등록 기능 만들어보기</title>
+<style>
+	table {
+		border: solid black; 
+		border-collapse:collapse; 
+		width:500px;
+	}
+	td {
+		border: 1px solid black; 
+		margin-left:1; 
+		padding:5px;
+	}
+	.btn_group{
+		text-align:center;
+	}
+</style>
+<script>
+	function send() {
+		member.submit();
+	}
+	function dl() {
+		
+	}
+</script>
+</head>
+<body>
+<form name="member" id="" method="post" action="/memberWrite.do">
+	<table>
+		<tr>
+			<td colspan=2 align="center">회원가입 폼</td>
+		</tr>
+		<tr>
+			<td width="100">이름</td>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id" id="id"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="pw" id="pw"></td>
+		</tr>
+		<tr>
+			<td>연락처</td>
+			<td>
+				<input type="text" name="call1" id="call1" size="3">-
+				<input type="text" name="call2" id="call2" size="4">-
+				<input type="text" name="call3" id="call3" size="4">
+			</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td>
+				<input type="text" name="email1" id="email1">@
+				<input type="text" name="email2" id="email2">
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 class=btn_group>
+				<input type="button" name="agree" value="등록" onClick="send()">
+				<input type="button" name="cancel" value="취소" onClick="dl()">
+			</td>
+		</tr>
+</table>
+</form>
+</body>
+</html>
+
